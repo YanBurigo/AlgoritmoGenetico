@@ -9,6 +9,7 @@ var elitismo = 0;
 var primeiroFilho = [];
 var segundoFilho = [];
 var cont2 = 0;
+var geracoes = 0;
 
 
 fetch("data/data.json")
@@ -23,6 +24,6 @@ fetch("data/disponibilidade.json")
 })
 .then(dis => disponibilidade = dis);
 
-function main(populacao){
-    AlgoritmoGenetico(populacao) 
+function main(populacao, valueMut){
+   return AlgoritmoGenetico(populacao, valueMut) 
 }

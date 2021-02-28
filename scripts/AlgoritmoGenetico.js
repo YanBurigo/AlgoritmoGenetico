@@ -1,4 +1,4 @@
-function AlgoritmoGenetico(populacao){
+function AlgoritmoGenetico(populacao, valueMut){
     var pontuacao=[];
     var novaPopulacao = [];
     elitismo = populacao.length;
@@ -32,16 +32,16 @@ function AlgoritmoGenetico(populacao){
                 }
             }
             reproduz(populacao[posicao[0]],populacao[posicao[1]]);
-            if(sorteio(0,100)<20){
+            if(sorteio(0,100)<valueMut){
                 primeiroFilho=mutacao(primeiroFilho);
             }
             novaPopulacao[i] = primeiroFilho;
-            if(sorteio(0,100)<20){
+            if(sorteio(0,100)<valueMut){
                 segundoFilho=mutacao(segundoFilho);
             }
             novaPopulacao[i+1] = segundoFilho;
         }
-
+        geracoes = geracao;
         if(cont == 1){
             break;
         }
@@ -50,6 +50,6 @@ function AlgoritmoGenetico(populacao){
     }
 
     cont = 0;
-    console.log(getMelhorIndividuo()[0])
-    console.log(getMelhorPontuacao()[0])
+    
+    return getMelhorIndividuo()[0];
 }

@@ -40,3 +40,7 @@ function mutacao(filho){
     }
     return filho;
 }
+
+function getGeracoes(){
+    return geracoes+1;
+}

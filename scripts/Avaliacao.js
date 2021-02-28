@@ -93,7 +93,7 @@ function avaliacaoAcumulada(pontuacao, id){
 
 function getMelhorIndividuo(){
     var individo=[];
-    for(var i=0; i<20; i++){
+    for(var i=0; i<0.2*elitismo; i++){
         individo[i]=melhoresIndividuos[i]
     }
     return individo;
